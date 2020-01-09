@@ -21,6 +21,7 @@ struct vec3 {
 struct mat4 {
     alignas(32) double data[16];
     mat4();
+    mat4(const mat4& rhs);
     mat4& operator=(const mat4& rhs);
     mat4& operator*=(const mat4& rhs);
     vec3 operator()(const vec3& vec) const;

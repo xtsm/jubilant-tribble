@@ -100,6 +100,10 @@ mat4::mat4() {
     data[0] = data[5] = data[10] = data[15] = 1;
 }
 
+mat4::mat4(const mat4& rhs) {
+    std::copy(rhs.data, rhs.data + 16, data);
+}
+
 mat4& mat4::operator=(const mat4& rhs) {
     std::copy(rhs.data, rhs.data + 16, data);
     return *this;
